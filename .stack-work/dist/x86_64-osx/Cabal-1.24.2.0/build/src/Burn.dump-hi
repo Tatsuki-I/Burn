@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2017-08-08 15:02:58.525378 UTC
+2017-08-08 15:46:16.345992 UTC
 
 interface Burn-0.1.0.0-7IS4CBqHvFj2pncH325bfV:Burn 8002
-  interface hash: 891f3d163969cc5e3393c48492d77823
-  ABI hash: 24a6106a2c2049b841f6d8b1341355e2
-  export-list hash: 7389be0bd251803f40fee03363b218e9
+  interface hash: 5cd67c298ebaa7b8f3729f462df3e6c4
+  ABI hash: 2dc026525c419bd306ea3673e3b296c6
+  export-list hash: ab1d4fcc7e45dc2a4fee6a4538f41430
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: f6624f22fcdd76ed0ac6625466e2d712
   sig of: Nothing
@@ -13,6 +13,8 @@ interface Burn-0.1.0.0-7IS4CBqHvFj2pncH325bfV:Burn 8002
   where
 exports:
   Burn.avg
+  Burn.burn
+  Burn.burn'
   Burn.exportImg
   Burn.exportImg'
   Burn.f
@@ -100,6 +102,16 @@ ab929a6d1ff9904adf7982d6ef2a56b6
                         wild2
                         GHC.Prim.realWorld# of wild { (#,#) ds2 ds3 ->
                  GHC.Prim.double2Int# ds3 } } } }) -}
+fad79e515499858d47d44be34e5b10b1
+  $wburn' ::
+    GHC.Types.Int
+    -> [GHC.Types.Int]
+    -> GHC.IO.FilePath
+    -> GHC.Prim.Int#
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 5, Strictness: <L,U(U)><L,U><L,U><S,1*U><S,U>,
+     Inline: [0] -}
 ed167def72dbd875b3e7ca3308479ec1
   $wf :: [GHC.Types.Int] -> (# [GHC.Types.Int], [[GHC.Types.Int]] #)
   {- Arity: 1, Strictness: <L,U>, Inline: [0],
@@ -146,11 +158,11 @@ ed167def72dbd875b3e7ca3308479ec1
 f2b469f8451587f783f761bf6443fad4
   $wgo :: [GHC.Types.Int] -> GHC.Prim.Int# -> GHC.Prim.Int#
   {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,U>, Inline: [0] -}
-9c920ed3a998d9aed5a4fe2a79dd083d
-  $wgo1 :: [GHC.Types.Int] -> [GHC.Types.Int] -> [GHC.Types.Int]
+d3e465b4f8c2636d799e6d634991168e
+  $wgo1 :: System.Random.StdGen -> GHC.Prim.Int# -> [GHC.Types.Int]
   {- Arity: 2, Strictness: <L,U><S,1*U>, Inline: [0] -}
-28813a12fbae3e67a40b6cda0ee71a37
-  $wgo2 :: System.Random.StdGen -> GHC.Prim.Int# -> [GHC.Types.Int]
+88efc08754f36d6fb11b2ee580630e63
+  $wgo2 :: [GHC.Types.Int] -> [GHC.Types.Int] -> [GHC.Types.Int]
   {- Arity: 2, Strictness: <L,U><S,1*U>, Inline: [0] -}
 de20733340044c14e34500663f9b123d
   $wgo3 :: System.Random.StdGen -> GHC.Prim.Int# -> [GHC.Types.Int]
@@ -158,7 +170,10 @@ de20733340044c14e34500663f9b123d
 ca3838f4d1852c46aee017f80cc0f6f9
   $wgo4 :: System.Random.StdGen -> GHC.Prim.Int# -> [GHC.Types.Int]
   {- Arity: 2, Strictness: <L,U><S,1*U>, Inline: [0] -}
-94fdc584b42eff3741b66fc7351b51b8
+ec83fbf2dc4d2c6c94c948297d2c014b
+  $wgo5 :: System.Random.StdGen -> GHC.Prim.Int# -> [GHC.Types.Int]
+  {- Arity: 2, Strictness: <L,U><S,1*U>, Inline: [0] -}
+e236a5a479110e30ec175115799790f4
   $wh ::
     ([GHC.Types.Int], [GHC.Types.Int])
     -> (# GHC.Types.Int, [GHC.Types.Int] #)
@@ -176,7 +191,7 @@ ca3838f4d1852c46aee017f80cc0f6f9
                                   GHC.List.$wunsafeTake @ GHC.Types.Int 2# x }))) of ww { DEFAULT ->
                     GHC.Types.I# ww },
                     case w of ww { (,) ww1 ww2 ->
-                    case Burn.$wgo1 ww1 ww2 of wild {
+                    case Burn.$wgo2 ww1 ww2 of wild {
                       [] -> case GHC.List.init2 ret_ty [GHC.Types.Int] of {}
                       : x xs
                       -> GHC.Base.++
@@ -231,14 +246,14 @@ ca3838f4d1852c46aee017f80cc0f6f9
                                            ww)) of ww2 { DEFAULT ->
                               GHC.Types.I# ww2 },
                               (GHC.List.tail @ GHC.Types.Int ww, wild1)) } }) -}
-300fceb589c29b20fd40cd40cc6aabbf
+3f06073b9066aad2f7f92b18d919f5a5
   $winitRndImg ::
     GHC.Types.Int
     -> GHC.Prim.Int# -> GHC.Types.Int -> [[GHC.Types.Int]]
   {- Arity: 3, Strictness: <L,1*U(U)><S,U><L,1*U(U)>, Inline: [0],
      Unfolding: (\ (w :: GHC.Types.Int)
                    (ww :: GHC.Prim.Int#)
-                   (w6 :: GHC.Types.Int) ->
+                   (w8 :: GHC.Types.Int) ->
                  Burn.$wl'
                    (GHC.Prim.-# ww 3#)
                    (case Burn.$wj
@@ -248,11 +263,11 @@ ca3838f4d1852c46aee017f80cc0f6f9
                                    (GHC.Prim.<# 0# y) of wild {
                               GHC.Types.False -> GHC.Types.[] @ GHC.Types.Int
                               GHC.Types.True
-                              -> Burn.$wgo2
-                                   (System.Random.mkStdGen w6)
+                              -> Burn.$wgo3
+                                   (System.Random.mkStdGen w8)
                                    y } }) of ww1 { (#,#) ww2 ww3 ->
                     GHC.Types.: @ [GHC.Types.Int] ww2 ww3 })) -}
-9ecd6cf5bc4462ae00b2ff17222dd6b1
+529f4fc09eab180d46c738a86aeb6d4b
   $winitRndImg' ::
     GHC.Types.Int
     -> GHC.Prim.Int#
@@ -263,8 +278,8 @@ ca3838f4d1852c46aee017f80cc0f6f9
      Inline: [0],
      Unfolding: (\ (w :: GHC.Types.Int)
                    (ww :: GHC.Prim.Int#)
-                   (w6 :: GHC.Types.Int)
-                   (w7 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                   (w8 :: GHC.Types.Int)
+                   (w9 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
                  Burn.$wl''
                    (GHC.Prim.-# ww 3#)
                    (case Burn.$wj
@@ -274,12 +289,12 @@ ca3838f4d1852c46aee017f80cc0f6f9
                                    (GHC.Prim.<# 0# y) of wild {
                               GHC.Types.False -> GHC.Types.[] @ GHC.Types.Int
                               GHC.Types.True
-                              -> Burn.$wgo3
-                                   (System.Random.mkStdGen w6)
+                              -> Burn.$wgo4
+                                   (System.Random.mkStdGen w8)
                                    y } }) of ww1 { (#,#) ww2 ww3 ->
                     GHC.Types.: @ [GHC.Types.Int] ww2 ww3 })
-                   w7) -}
-f7892733ef1b679ccea58780426ad4fc
+                   w9) -}
+395b7b45e41ba9c455853fc2d39d28b9
   $wj :: [GHC.Types.Int] -> (# [GHC.Types.Int], [[GHC.Types.Int]] #)
   {- Arity: 1, Strictness: <L,U>, Inline: [0],
      Unfolding: (\ (w :: [GHC.Types.Int]) ->
@@ -289,7 +304,7 @@ f7892733ef1b679ccea58780426ad4fc
                             GHC.List.head @ [GHC.Types.Int] ww2 }) of ww { (#,#) ww1 ww2 ->
                     GHC.Types.: @ GHC.Types.Int ww1 ww2 },
                     Burn.f w #)) -}
-60efb5ceaa4dbdccc1b753d4328387a4
+8bc7322b2153bd2cb67e1a18932db7ab
   $wk :: [[GHC.Types.Int]] -> (# GHC.Types.Int, [GHC.Types.Int] #)
   {- Arity: 1, Strictness: <L,U>, Inline: [0],
      Unfolding: (\ (w :: [[GHC.Types.Int]]) ->
@@ -326,6 +341,143 @@ b137abc007b6424e99242eada828f201
      Unfolding: InlineRule (1, True, False)
                 (\ (w :: [GHC.Types.Int]) ->
                  case Burn.$wavg w of ww { DEFAULT -> GHC.Types.I# ww }) -}
+a533dc5ea6bfb7c8330ec3e45ad4b6be
+  burn ::
+    GHC.Types.Int
+    -> GHC.Types.Int
+    -> GHC.IO.FilePath
+    -> GHC.Types.Int
+    -> GHC.Types.IO ()
+  {- Arity: 5, Strictness: <L,1*U(U)><L,U(U)><L,U><L,1*U(1*U)><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Burn.burn1
+                  `cast`
+                (<GHC.Types.Int>_R
+                 ->_R <GHC.Types.Int>_R
+                 ->_R <GHC.IO.FilePath>_R
+                 ->_R <GHC.Types.Int>_R
+                 ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
+f86ca8effaabae6d24f21ef526d8738a
+  burn' ::
+    GHC.Types.Int
+    -> [GHC.Types.Int]
+    -> GHC.IO.FilePath
+    -> GHC.Types.Int
+    -> GHC.Types.IO ()
+  {- Arity: 5, Strictness: <L,U(U)><L,U><L,U><S(S),1*U(1*U)><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Burn.burn'1
+                  `cast`
+                (<GHC.Types.Int>_R
+                 ->_R <[GHC.Types.Int]>_R
+                 ->_R <GHC.IO.FilePath>_R
+                 ->_R <GHC.Types.Int>_R
+                 ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
+974518ca7ef1c137cd68a4435ee1ae14
+  burn'1 ::
+    GHC.Types.Int
+    -> [GHC.Types.Int]
+    -> GHC.IO.FilePath
+    -> GHC.Types.Int
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 5, Strictness: <L,U(U)><L,U><L,U><S(S),1*U(1*U)><S,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (5, True, False)
+                (\ (w :: GHC.Types.Int)
+                   (w8 :: [GHC.Types.Int])
+                   (w9 :: GHC.IO.FilePath)
+                   (w10 :: GHC.Types.Int)
+                   (w11 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case w10 of ww { GHC.Types.I# ww1 ->
+                 Burn.$wburn' w w8 w9 ww1 w11 }) -}
+01243e67e0b45bcb4b40e8894d31dc44
+  burn1 ::
+    GHC.Types.Int
+    -> GHC.Types.Int
+    -> GHC.IO.FilePath
+    -> GHC.Types.Int
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 5, Strictness: <L,1*U(U)><L,U(U)><L,U><L,1*U(1*U)><S,U>,
+     Unfolding: (\ (x :: GHC.Types.Int)
+                   (y :: GHC.Types.Int)
+                   (path :: GHC.IO.FilePath)
+                   (c :: GHC.Types.Int)
+                   (eta :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case System.Random.theStdGen
+                        `cast`
+                      (GHC.IORef.N:IORef[0] <System.Random.StdGen>_N) of wild { GHC.STRef.STRef r# ->
+                 case GHC.Prim.atomicModifyMutVar#
+                        @ GHC.Prim.RealWorld
+                        @ System.Random.StdGen
+                        @ (System.Random.StdGen, GHC.Types.Int)
+                        @ GHC.Types.Int
+                        r#
+                        Burn.burn2
+                        eta of ds1 { (#,#) ipv ipv1 ->
+                 case ipv1 of b1 { GHC.Types.I# ipv2 ->
+                 case c of ww { GHC.Types.I# ww1 ->
+                 Burn.$wburn'
+                   y
+                   (case x of wild1 { GHC.Types.I# y1 ->
+                    case GHC.Prim.tagToEnum#
+                           @ GHC.Types.Bool
+                           (GHC.Prim.<# 0# y1) of wild2 {
+                      GHC.Types.False -> GHC.Types.[] @ GHC.Types.Int
+                      GHC.Types.True
+                      -> Burn.$wgo1
+                           (case GHC.Prim.tagToEnum#
+                                   @ GHC.Types.Bool
+                                   (GHC.Prim.>=# ipv2 0#) of wild3 {
+                              GHC.Types.False
+                              -> case GHC.Int.$w$cdivMod1
+                                        (GHC.Prim.word2Int#
+                                           (GHC.Prim.and#
+                                              (GHC.Prim.int2Word#
+                                                 (GHC.Prim.narrow32Int# (GHC.Prim.negateInt# ipv2)))
+                                              2147483647##))
+                                        2147483562# of ww4 { (#,#) ww5 ww6 ->
+                                 case ww6 of wild4 { GHC.Int.I32# x# ->
+                                 case ww5 of ww2 { GHC.Int.I32# ww3 ->
+                                 case GHC.Classes.modInt# ww3 2147483398# of wild5 { DEFAULT ->
+                                 System.Random.StdGen
+                                   (GHC.Prim.narrow32Int# (GHC.Prim.+# x# 1#))
+                                   (GHC.Prim.narrow32Int#
+                                      (GHC.Prim.+# (GHC.Prim.narrow32Int# wild5) 1#)) } } } }
+                              GHC.Types.True
+                              -> case GHC.Int.$w$cdivMod1
+                                        (GHC.Prim.word2Int#
+                                           (GHC.Prim.and#
+                                              (GHC.Prim.int2Word# (GHC.Prim.narrow32Int# ipv2))
+                                              2147483647##))
+                                        2147483562# of ww4 { (#,#) ww5 ww6 ->
+                                 case ww6 of wild4 { GHC.Int.I32# x# ->
+                                 case ww5 of ww2 { GHC.Int.I32# ww3 ->
+                                 case GHC.Classes.modInt# ww3 2147483398# of wild5 { DEFAULT ->
+                                 System.Random.StdGen
+                                   (GHC.Prim.narrow32Int# (GHC.Prim.+# x# 1#))
+                                   (GHC.Prim.narrow32Int#
+                                      (GHC.Prim.+# (GHC.Prim.narrow32Int# wild5) 1#)) } } } } })
+                           y1 } })
+                   path
+                   ww1
+                   ipv } } } }) -}
+a20f7e67164812f84862ff68d065d947
+  burn2 ::
+    System.Random.StdGen -> (System.Random.StdGen, GHC.Types.Int)
+  {- Arity: 1,
+     Unfolding: (\ (a1 :: System.Random.StdGen) ->
+                 case System.Random.$wrandomIvalInteger
+                        @ System.Random.StdGen
+                        @ GHC.Types.Int
+                        System.Random.$fRandomGenStdGen
+                        GHC.Num.$fNumInt
+                        System.Random.$fRandomCIntMax4
+                        System.Random.$fRandomCIntMax3
+                        a1 of ww { (#,#) ww1 ww2 ->
+                 case ww2 of a'1 { System.Random.StdGen ipv ipv1 ->
+                 (a'1, ww1) } }) -}
 9a1fef690867359f985662a64b218819
   exportImg ::
     GHC.IO.FilePath -> [[GHC.Types.Int]] -> GHC.Types.IO ()
@@ -402,7 +554,7 @@ efb0abcb3bd455df848973d0fcd77845
                                 (GHC.List.$wunsafeTake @ GHC.Types.Int 3# wild) of ww { DEFAULT ->
                          GHC.Types.I# ww },
                          ipv1) }) -}
-b13b57156e88c88342b09809be391a74
+9dc207fea091e05f3c2b5f1bc563cd6b
   h :: ([GHC.Types.Int], [GHC.Types.Int]) -> [GHC.Types.Int]
   {- Arity: 1, Strictness: <L,U(U,U)>m2, Inline: INLINE[0],
      Unfolding: InlineRule (1, True, False)
@@ -428,11 +580,11 @@ ae8b805ab8858b84cd4f8fd17d10b808
   i1 ::
     GHC.Base.Maybe (GHC.Types.Int, ([GHC.Types.Int], [GHC.Types.Int]))
   {- Strictness: x -}
-16e1e4196cfc7f5456bd9950447180f0
+6b2b8f8a00dc8dd2d2e567595971cfff
   initImg :: GHC.Types.Int -> [GHC.Types.Int] -> [[GHC.Types.Int]]
   {- Arity: 2, Strictness: <S(S),1*U(U)><L,U>,
      Unfolding: InlineRule (0, True, True) Burn.l -}
-f34bc810d4ff8fe80678b8644792c37c
+de475a6252280aca319c6a5b1d4d0404
   initImg' ::
     GHC.Types.Int -> [GHC.Types.Int] -> GHC.Types.IO [[GHC.Types.Int]]
   {- Arity: 3, Strictness: <S(S),1*U(U)><L,U><S,U>,
@@ -442,7 +594,7 @@ f34bc810d4ff8fe80678b8644792c37c
                 (<GHC.Types.Int>_R
                  ->_R <[GHC.Types.Int]>_R
                  ->_R Sym (GHC.Types.N:IO[0] <[[GHC.Types.Int]]>_R)) -}
-542d430b056a9f1b175f0c3439e91491
+3ce45438ef9062127191b1dd120422ea
   initImg'1 ::
     GHC.Types.Int
     -> [GHC.Types.Int]
@@ -458,7 +610,7 @@ f34bc810d4ff8fe80678b8644792c37c
                    (GHC.Types.I# (GHC.Prim.-# x 3#))
                    (Burn.j xs)
                    eta }) -}
-28669471749bc19fbcb0a6e0736bcb7b
+969e4e6908e661e997b6bc5de8158823
   initImg'2 ::
     GHC.Types.Int
     -> [[GHC.Types.Int]]
@@ -468,10 +620,10 @@ f34bc810d4ff8fe80678b8644792c37c
      Inline: INLINE[0],
      Unfolding: InlineRule (3, True, False)
                 (\ (w :: GHC.Types.Int)
-                   (w6 :: [[GHC.Types.Int]])
-                   (w7 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
-                 case w of ww { GHC.Types.I# ww1 -> Burn.$wl'' ww1 w6 w7 }) -}
-495acdbcb520026bcfaa7dfb0754a11b
+                   (w8 :: [[GHC.Types.Int]])
+                   (w9 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case w of ww { GHC.Types.I# ww1 -> Burn.$wl'' ww1 w8 w9 }) -}
+6aebc37d966228f811990b83e88bde2b
   initRndImg ::
     GHC.Types.Int
     -> GHC.Types.Int -> GHC.Types.Int -> [[GHC.Types.Int]]
@@ -479,11 +631,11 @@ f34bc810d4ff8fe80678b8644792c37c
      Inline: INLINE[0],
      Unfolding: InlineRule (3, True, False)
                 (\ (w :: GHC.Types.Int)
-                   (w6 :: GHC.Types.Int)
-                   (w7 :: GHC.Types.Int) ->
-                 case w6 of ww { GHC.Types.I# ww1 ->
-                 Burn.$winitRndImg w ww1 w7 }) -}
-6abee36806945f253d044b906f175800
+                   (w8 :: GHC.Types.Int)
+                   (w9 :: GHC.Types.Int) ->
+                 case w8 of ww { GHC.Types.I# ww1 ->
+                 Burn.$winitRndImg w ww1 w9 }) -}
+75315616a896a4f747a5e0a69430607d
   initRndImg' ::
     GHC.Types.Int
     -> GHC.Types.Int -> GHC.Types.Int -> GHC.Types.IO [[GHC.Types.Int]]
@@ -495,7 +647,7 @@ f34bc810d4ff8fe80678b8644792c37c
                  ->_R <GHC.Types.Int>_R
                  ->_R <GHC.Types.Int>_R
                  ->_R Sym (GHC.Types.N:IO[0] <[[GHC.Types.Int]]>_R)) -}
-88bb8baf483b8571226367866d2f5695
+863912fa468358e9ea4138717d900f81
   initRndImg'1 ::
     GHC.Types.Int
     -> GHC.Types.Int
@@ -506,26 +658,26 @@ f34bc810d4ff8fe80678b8644792c37c
      Inline: INLINE[0],
      Unfolding: InlineRule (4, True, False)
                 (\ (w :: GHC.Types.Int)
-                   (w6 :: GHC.Types.Int)
-                   (w7 :: GHC.Types.Int)
-                   (w8 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
-                 case w6 of ww { GHC.Types.I# ww1 ->
-                 Burn.$winitRndImg' w ww1 w7 w8 }) -}
-841c7a31284fd52faaaf8c42bf31922c
+                   (w8 :: GHC.Types.Int)
+                   (w9 :: GHC.Types.Int)
+                   (w10 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case w8 of ww { GHC.Types.I# ww1 ->
+                 Burn.$winitRndImg' w ww1 w9 w10 }) -}
+ab21c2dea5f1b637a0cb972c1f7b5b51
   j :: [GHC.Types.Int] -> [[GHC.Types.Int]]
   {- Arity: 1, Strictness: <L,U>m2, Inline: INLINE[0],
      Unfolding: InlineRule (1, True, False)
                 (\ (w :: [GHC.Types.Int]) ->
                  case Burn.$wj w of ww { (#,#) ww1 ww2 ->
                  GHC.Types.: @ [GHC.Types.Int] ww1 ww2 }) -}
-6f3512e73f5e18d53e1dbd265c73a256
+c614c4a82968d64b5a289dbaa2fc483c
   k :: [[GHC.Types.Int]] -> [GHC.Types.Int]
   {- Arity: 1, Strictness: <L,U>m2, Inline: INLINE[0],
      Unfolding: InlineRule (1, True, False)
                 (\ (w :: [[GHC.Types.Int]]) ->
                  case Burn.$wk w of ww { (#,#) ww1 ww2 ->
                  GHC.Types.: @ GHC.Types.Int ww1 ww2 }) -}
-c93c644cf921852034bd10f172f45239
+628f1b4b3b4a5e38360121bf1f693594
   k' :: [[GHC.Types.Int]] -> GHC.Types.IO [GHC.Types.Int]
   {- Arity: 2, Strictness: <L,U><S,U>,
      Unfolding: InlineRule (0, True, True)
@@ -533,7 +685,7 @@ c93c644cf921852034bd10f172f45239
                   `cast`
                 (<[[GHC.Types.Int]]>_R
                  ->_R Sym (GHC.Types.N:IO[0] <[GHC.Types.Int]>_R)) -}
-52d4756baf19dc95b2e32e66fea60369
+b5282ee8fd1bb7c05be1ffb74543e53d
   k'1 ::
     [[GHC.Types.Int]]
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -550,7 +702,7 @@ c93c644cf921852034bd10f172f45239
                         @ (System.Random.StdGen, GHC.Types.Int)
                         @ GHC.Types.Int
                         r#
-                        Burn.k'2
+                        Burn.burn2
                         s of ds1 { (#,#) ipv ipv1 ->
                  case ipv1 of b1 { GHC.Types.I# ipv2 ->
                  case GHC.Prim.atomicModifyMutVar#
@@ -559,7 +711,7 @@ c93c644cf921852034bd10f172f45239
                         @ (System.Random.StdGen, GHC.Types.Int)
                         @ GHC.Types.Int
                         r#
-                        Burn.k'2
+                        Burn.burn2
                         ipv of ds2 { (#,#) ipv3 ipv4 ->
                  case ipv4 of b2 { GHC.Types.I# ipv5 ->
                  (# ipv3,
@@ -582,35 +734,20 @@ c93c644cf921852034bd10f172f45239
                                       GHC.Types.True -> b2 })
                                    (GHC.List.head @ [GHC.Types.Int] xs1) }) of ww { (#,#) ww1 ww2 ->
                     GHC.Types.: @ GHC.Types.Int ww1 ww2 } #) } } } } }) -}
-fadec06ecb5a694fcc082ea43277520c
-  k'2 ::
-    System.Random.StdGen -> (System.Random.StdGen, GHC.Types.Int)
-  {- Arity: 1,
-     Unfolding: (\ (a1 :: System.Random.StdGen) ->
-                 case System.Random.$wrandomIvalInteger
-                        @ System.Random.StdGen
-                        @ GHC.Types.Int
-                        System.Random.$fRandomGenStdGen
-                        GHC.Num.$fNumInt
-                        System.Random.$fRandomCIntMax4
-                        System.Random.$fRandomCIntMax3
-                        a1 of ww { (#,#) ww1 ww2 ->
-                 case ww2 of a'1 { System.Random.StdGen ipv ipv1 ->
-                 (a'1, ww1) } }) -}
-f0662b043a29ad0c58b84bf42e65d494
+63c44ee417826d0187bbff74cfe7f1c9
   l :: GHC.Types.Int -> [GHC.Types.Int] -> [[GHC.Types.Int]]
   {- Arity: 2, Strictness: <S(S),1*U(U)><L,U>,
      Unfolding: InlineRule (2, True, False)
                 (\ (c :: GHC.Types.Int) (xs :: [GHC.Types.Int]) ->
                  case c of wild { GHC.Types.I# x ->
                  Burn.l' (GHC.Types.I# (GHC.Prim.-# x 3#)) (Burn.j xs) }) -}
-802537395361356d48323b911f060ed7
+7273f3787f0b54247ebd6566d4adca88
   l' :: GHC.Types.Int -> [[GHC.Types.Int]] -> [[GHC.Types.Int]]
   {- Arity: 2, Strictness: <S(S),1*U(1*U)><L,U>, Inline: INLINE[0],
      Unfolding: InlineRule (2, True, False)
-                (\ (w :: GHC.Types.Int) (w6 :: [[GHC.Types.Int]]) ->
-                 case w of ww { GHC.Types.I# ww1 -> Burn.$wl' ww1 w6 }) -}
-b113739d98908a8e4e74d7879821b740
+                (\ (w :: GHC.Types.Int) (w8 :: [[GHC.Types.Int]]) ->
+                 case w of ww { GHC.Types.I# ww1 -> Burn.$wl' ww1 w8 }) -}
+4a64a42ee40d184e278478a9a86014f2
   l'' ::
     GHC.Types.Int
     -> [[GHC.Types.Int]] -> GHC.Types.IO [[GHC.Types.Int]]
@@ -621,7 +758,7 @@ b113739d98908a8e4e74d7879821b740
                 (<GHC.Types.Int>_R
                  ->_R <[[GHC.Types.Int]]>_R
                  ->_R Sym (GHC.Types.N:IO[0] <[[GHC.Types.Int]]>_R)) -}
-8f3628649eb7f6447da1fee4c6f1202a
+3e1f067682d52a89d3359f74c93f9bf5
   m ::
     GHC.Types.Int -> [GHC.Types.Int] -> GHC.Types.IO [[GHC.Types.Int]]
   {- Arity: 3, Strictness: <S(S),1*U(U)><L,U><S,U>,
@@ -631,7 +768,7 @@ b113739d98908a8e4e74d7879821b740
                 (<GHC.Types.Int>_R
                  ->_R <[GHC.Types.Int]>_R
                  ->_R Sym (GHC.Types.N:IO[0] <[[GHC.Types.Int]]>_R)) -}
-4656262ebae3cc5f5788c9b593718366
+4af86a2c932c5e4d56ff708a801b8977
   mkNoise :: GHC.Types.Int -> [GHC.Types.Int] -> [GHC.Types.Int]
   {- Arity: 2, Strictness: <L,1*U(U)><S,U>,
      Unfolding: (\ (rnd3 :: GHC.Types.Int) (xs :: [GHC.Types.Int]) ->
@@ -647,7 +784,7 @@ b113739d98908a8e4e74d7879821b740
                            (GHC.Prim.<# 0# ww2) of wild {
                       GHC.Types.False -> GHC.Types.[] @ GHC.Types.Int
                       GHC.Types.True
-                      -> Burn.$wgo4
+                      -> Burn.$wgo5
                            (case rnd3 of wild1 { GHC.Types.I# x# ->
                             case GHC.Int.$w$cdivMod1
                                    (GHC.Prim.word2Int#
@@ -663,7 +800,7 @@ b113739d98908a8e4e74d7879821b740
                               (GHC.Prim.narrow32Int#
                                  (GHC.Prim.+# (GHC.Prim.narrow32Int# wild3) 1#)) } } } } })
                            ww2 } })) -}
-89aa55749e234853befb57fdc1ed3ad7
+5206780b4800eb7608c2d65051ee7839
   mkRndNoise :: [GHC.Types.Int] -> GHC.Types.IO [GHC.Types.Int]
   {- Arity: 2, Strictness: <L,U><S,U>,
      Unfolding: InlineRule (0, True, True)
@@ -671,7 +808,7 @@ b113739d98908a8e4e74d7879821b740
                   `cast`
                 (<[GHC.Types.Int]>_R
                  ->_R Sym (GHC.Types.N:IO[0] <[GHC.Types.Int]>_R)) -}
-18f671b2200dc889cad5fb658486b732
+a3c3d614fb2b10b51b67c7ceb5e7a255
   mkRndNoise1 ::
     [GHC.Types.Int]
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -688,7 +825,7 @@ b113739d98908a8e4e74d7879821b740
                         @ (System.Random.StdGen, GHC.Types.Int)
                         @ GHC.Types.Int
                         r#
-                        Burn.k'2
+                        Burn.burn2
                         eta of ds1 { (#,#) ipv ipv1 ->
                  case ipv1 of b1 { GHC.Types.I# ipv2 ->
                  (# ipv,
@@ -699,12 +836,12 @@ b113739d98908a8e4e74d7879821b740
                          GHC.Types.False -> GHC.Types.I# (GHC.Prim.negateInt# ipv2)
                          GHC.Types.True -> b1 })
                       xs #) } } }) -}
-8bc38f74ecd3c13586b183c0c538902c
+66e06e92bbab9944eb4cb47cb075cae3
   rnd :: GHC.Types.IO GHC.Types.Int
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Burn.rnd1 `cast` (Sym (GHC.Types.N:IO[0] <GHC.Types.Int>_R)) -}
-6be1f87a996d94b6ddf29fed9bf1f88c
+653aa8905542843be29bf0b17b8f5566
   rnd1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.Types.Int #)
@@ -713,7 +850,7 @@ b113739d98908a8e4e74d7879821b740
                 (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
                  case Burn.rnd2 s of ds1 { (#,#) ipv ipv1 ->
                  (# ipv, GHC.Num.$fNumInt_$cabs ipv1 #) }) -}
-9a3df1260afdffb4e91599764a25a46c
+a23af5c9a1f1b55422e765b394306617
   rnd2 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.Types.Int #)
@@ -729,7 +866,7 @@ b113739d98908a8e4e74d7879821b740
                         @ (System.Random.StdGen, GHC.Types.Int)
                         @ GHC.Types.Int
                         r#
-                        Burn.k'2
+                        Burn.burn2
                         eta of ds1 { (#,#) ipv ipv1 ->
                  case ipv1 of b1 { GHC.Types.I# ipv2 -> ds1 } } }) -}
 c54dc1910c335f559e5ea284f3159421

@@ -10,7 +10,23 @@ type Green = Color
 type Blue = Color
 type Color = Int
 
---randomRs (1, 6) (mkStdGen 11)
+burn :: Int -> Int -> FilePath -> Int -> IO ()
+burn x y path c =  do rndNum <- rnd
+                      burn' y (take x $ randomRs (0, 255) (mkStdGen rndNum)) path c
+
+burn' :: Int -> [Int] -> FilePath -> Int -> IO ()
+burn' _ _ _ 0 = return ()
+burn' y l path c =  do img <- initImg' y l
+                       exportImg (path ++ (replicate (4 - ((length . show) c)) '0') ++ (show c)) img
+                       rndNum <- rnd
+                       burn' y
+                             (zipWith (+)
+                                      (last img)
+                                      $ take (length $ last img) $ randomRs (-5, 5) (mkStdGen rndNum))
+                             path
+                             (c - 1)
+
+
 initRndImg :: Int -> Int -> Int -> [[Int]]
 initRndImg x y rnd =  initImg y $ take x $ randomRs (0, 255) (mkStdGen rnd)
 
