@@ -10,11 +10,29 @@ type Green = Color
 type Blue = Color
 type Color = Int
 
+--randomRs (1, 6) (mkStdGen 11)
+initRndImg :: Int -> Int -> Int -> [[Int]]
+initRndImg x y rnd =  initImg y $ take x $ randomRs (0, 255) (mkStdGen rnd)
+
 initImg :: Int -> [Int] -> [[Int]]
 initImg c xs = l c $ j xs
 
+toPGM :: [[Int]] -> String
+toPGM xs =  unlines $ [ "P2"
+                      , (show . length . head) xs
+                        ++ " "
+                        ++ (show . length) xs
+                      , "255" ]
+                      ++ map (unwords . map show) xs
+
+exportImg :: FilePath -> [[Int]] -> IO ()
+exportImg path xs =  writeFile (path ++ ".pgm") $ toPGM xs
+
 f    :: [Int] -> [[Int]]
-f xs =  (avg (take 2 xs) : init (unfoldr g xs)) : [xs]
+f xs =  (avg (last xs : take 2 xs)
+        : (init . init) (unfoldr g xs)
+        ++ [avg (head xs : take 2 (reverse xs))])
+        : [xs]
 
 g :: [Int] -> Maybe (Int, [Int])
 g [] =  Nothing
@@ -42,4 +60,3 @@ l c xs =  l (c - 1) (k xs : xs)
 avg :: [Int] -> Int
 avg xs =  sum xs `div` length xs
 
---randomRs (1, 6) (mkStdGen 11)
