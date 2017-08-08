@@ -14,8 +14,14 @@ type Color = Int
 initRndImg :: Int -> Int -> Int -> [[Int]]
 initRndImg x y rnd =  initImg y $ take x $ randomRs (0, 255) (mkStdGen rnd)
 
+initRndImg' :: Int -> Int -> Int -> IO [[Int]]
+initRndImg' x y rnd =  initImg' y $ take x $ randomRs (0, 255) (mkStdGen rnd)
+
 initImg :: Int -> [Int] -> [[Int]]
-initImg c xs = l c $ j xs
+initImg =  l
+
+initImg' :: Int -> [Int] -> IO [[Int]]
+initImg' =  m
 
 toPGM :: [[Int]] -> String
 toPGM xs =  unlines $ [ "P2"
@@ -27,6 +33,10 @@ toPGM xs =  unlines $ [ "P2"
 
 exportImg :: FilePath -> [[Int]] -> IO ()
 exportImg path xs =  writeFile (path ++ ".pgm") $ toPGM xs
+
+exportImg' :: FilePath -> IO [[Int]] -> IO ()
+exportImg' path xs =  do nxs <- xs
+                         writeFile (path ++ ".pgm") $ toPGM nxs
 
 f    :: [Int] -> [[Int]]
 f xs =  (avg (last xs : take 2 xs)
@@ -53,11 +63,38 @@ j xs =  h t : f xs
 
 k :: [[Int]] -> [Int]
 k xs =  h t
-        where t =  ((head . f . head) xs, (head . tail. f . head) xs)
+        where t =  ((head) xs, (head . tail) xs)
 
-l :: Int -> [[Int]] -> [[Int]]
-l 0 xs =  xs
-l c xs =  l (c - 1) (k xs : xs)
+k' :: [[Int]] -> IO [Int]
+k' xs =  do l1 <- (mkRndNoise . head) xs
+            l2 <- (mkRndNoise . head . tail) xs
+            return $ h (l1, l2)
+
+l :: Int -> [Int] -> [[Int]]
+l c xs =  l' (c - 3) $ j xs
+
+m :: Int -> [Int] -> IO [[Int]]
+m c xs =  l'' (c - 3) $ j xs
+
+l' :: Int -> [[Int]] -> [[Int]]
+l' 0 xs =  xs
+l' c xs =  l' (c - 1) (k xs : xs)
+
+l'' :: Int -> [[Int]] -> IO [[Int]]
+l'' 0 xs =  return xs
+l'' c xs =  do nxs <- k' xs
+               l'' (c - 1) (nxs : xs)
+
+mkNoise :: Int -> [Int] -> [Int]
+mkNoise rnd xs =  zipWith (+) xs $ take (length xs) $ randomRs (-15, 15) (mkStdGen rnd)
+
+mkRndNoise :: [Int] -> IO [Int]
+mkRndNoise xs =  do rndNum <- rnd
+                    return $ mkNoise rndNum xs
+
+rnd :: IO Int
+rnd =  do rndNum <- getStdRandom random
+          return $ abs rndNum
 
 avg :: [Int] -> Int
 avg xs =  round $ (fromIntegral (sum xs) :: Double) / (fromIntegral (length xs) :: Double)
