@@ -1,0 +1,293 @@
+
+==================== FINAL INTERFACE ====================
+2017-08-08 08:54:28.852057 UTC
+
+interface Burn-0.1.0.0-7IS4CBqHvFj2pncH325bfV:Burn 8002
+  interface hash: 7ac7acac3563f1d60c17d98a1c387bd3
+  ABI hash: 2b0cd60571963bd94cfac9802e5e276d
+  export-list hash: cd0aaf487d06ccabd03c72b20df9bcbe
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: f6624f22fcdd76ed0ac6625466e2d712
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Burn.avg
+  Burn.f
+  Burn.g
+  Burn.h
+  Burn.i
+  Burn.initImg
+  Burn.j
+  Burn.k
+  Burn.l
+  Burn.Blue
+  Burn.Color
+  Burn.Green
+  Burn.Img
+  Burn.Pixel
+  Burn.Red
+module dependencies:
+package dependencies: array-0.5.1.1@array-0.5.1.1 base-4.9.1.0*
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1 random-1.1@random-1.1-9tceXaeYIMZ4JrKq20Egog*
+                      time-1.6.0.1@time-1.6.0.1
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Calendar.Gregorian
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Format.Parse
+         time-1.6.0.1@time-1.6.0.1:Data.Time.LocalTime.LocalTime
+family instance modules: base-4.9.1.0:Control.Applicative
+                         base-4.9.1.0:Data.Complex base-4.9.1.0:Data.Either
+                         base-4.9.1.0:Data.Functor.Const base-4.9.1.0:Data.Functor.Identity
+                         base-4.9.1.0:Data.List.NonEmpty base-4.9.1.0:Data.Monoid
+                         base-4.9.1.0:Data.Semigroup base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:Data.Version base-4.9.1.0:Data.Void
+                         base-4.9.1.0:GHC.Exts base-4.9.1.0:GHC.Generics
+                         base-4.9.1.0:GHC.IO.Exception base-4.9.1.0:GHC.TypeLits
+import  -/  base-4.9.1.0:Data.Foldable 3e0b6967a1da89945d0e2d47266337a2
+import  -/  base-4.9.1.0:Data.List 07ae2acca6538aa0800bd0a993ac6ac1
+import  -/  base-4.9.1.0:Data.OldList 27987919d8da2f92e3f472ca81f730f8
+import  -/  base-4.9.1.0:Data.Tuple 7dc4bbb45d2e69c991ffac438beeca11
+import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
+import  -/  base-4.9.1.0:GHC.List ab8c4e523e6c479c549d3bcd5fc4a439
+import  -/  base-4.9.1.0:GHC.Num 00bfaa7b2f9d6084913c0697a8a49ec8
+import  -/  base-4.9.1.0:GHC.Real 82e4e59051a13dba1da63e1e970a69e6
+import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  random-1.1@random-1.1-9tceXaeYIMZ4JrKq20Egog:System.Random cc3ef358c669b194cf9fe94db6f2430f
+ab929a6d1ff9904adf7982d6ef2a56b6
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Burn.$trModule2 Burn.$trModule1) -}
+712a259c57cbd8649bd5cebe3a9a0beb
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Burn"#) -}
+945e51d5ab24f3fe85190ad046d4bd9f
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "Burn-0.1.0.0-7IS4CBqHvFj2pncH325bfV"#) -}
+6cef36ae9030e8602853c2c3c6a6548d
+  $wavg :: [GHC.Types.Int] -> GHC.Prim.Int#
+  {- Arity: 1, Strictness: <S,U>, Inline: [0],
+     Unfolding: (\ (w :: [GHC.Types.Int]) ->
+                 case Burn.$wgo w 0# of ww { DEFAULT ->
+                 case GHC.List.$wlenAcc @ GHC.Types.Int w 0# of ww2 {
+                   DEFAULT -> GHC.Classes.divInt# ww ww2
+                   -1#
+                   -> case ww of wild1 {
+                        DEFAULT -> GHC.Classes.divInt# wild1 -1#
+                        -9223372036854775808#
+                        -> case GHC.Real.overflowError ret_ty GHC.Prim.Int# of {} }
+                   0# -> case GHC.Real.divZeroError ret_ty GHC.Prim.Int# of {} } }) -}
+8bdbf2fa15dc74751eb6b282a9391ee8
+  $wf :: [GHC.Types.Int] -> (# [GHC.Types.Int], [[GHC.Types.Int]] #)
+  {- Arity: 1, Strictness: <L,U>, Inline: [0],
+     Unfolding: (\ (w :: [GHC.Types.Int]) ->
+                 (# GHC.Types.:
+                      @ GHC.Types.Int
+                      (case Burn.$wavg
+                              (GHC.List.$wunsafeTake @ GHC.Types.Int 2# w) of ww { DEFAULT ->
+                       GHC.Types.I# ww })
+                      (case Burn.f_go w of wild {
+                         [] -> GHC.List.init2 @ GHC.Types.Int
+                         : x xs -> GHC.List.init1 @ GHC.Types.Int x xs }),
+                    GHC.Types.:
+                      @ [GHC.Types.Int]
+                      w
+                      (GHC.Types.[] @ [GHC.Types.Int]) #)) -}
+f2b469f8451587f783f761bf6443fad4
+  $wgo :: [GHC.Types.Int] -> GHC.Prim.Int# -> GHC.Prim.Int#
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,U>, Inline: [0] -}
+9c920ed3a998d9aed5a4fe2a79dd083d
+  $wgo1 :: [GHC.Types.Int] -> [GHC.Types.Int] -> [GHC.Types.Int]
+  {- Arity: 2, Strictness: <L,U><S,1*U>, Inline: [0] -}
+98833f007eae749fbcae78fe991e2fad
+  $wh ::
+    ([GHC.Types.Int], [GHC.Types.Int])
+    -> (# GHC.Types.Int, [GHC.Types.Int] #)
+  {- Arity: 1, Strictness: <L,U(U,U)>, Inline: [0],
+     Unfolding: (\ (w :: ([GHC.Types.Int], [GHC.Types.Int])) ->
+                 (# case Burn.$wavg
+                           (GHC.Types.:
+                              @ GHC.Types.Int
+                              (case w of wild { (,) ds1 y -> GHC.List.head @ GHC.Types.Int y })
+                              (case w of wild { (,) x ds1 ->
+                               GHC.List.$wunsafeTake @ GHC.Types.Int 2# x })) of ww { DEFAULT ->
+                    GHC.Types.I# ww },
+                    case w of ww { (,) ww1 ww2 -> Burn.$wgo1 ww1 ww2 } #)) -}
+9332f077a60ab656b9a04fa54bc2c028
+  $wi ::
+    [GHC.Types.Int]
+    -> [GHC.Types.Int]
+    -> GHC.Base.Maybe
+         (GHC.Types.Int, ([GHC.Types.Int], [GHC.Types.Int]))
+  {- Arity: 2, Strictness: <L,U><S,1*U>, Inline: [0],
+     Unfolding: (\ (ww :: [GHC.Types.Int]) (ww1 :: [GHC.Types.Int]) ->
+                 case ww1 of wild {
+                   [] -> Burn.i1
+                   : ds ds1
+                   -> case ds1 of wild1 {
+                        []
+                        -> GHC.Base.Nothing
+                             @ (GHC.Types.Int, ([GHC.Types.Int], [GHC.Types.Int]))
+                        : ipv ipv1
+                        -> GHC.Base.Just
+                             @ (GHC.Types.Int, ([GHC.Types.Int], [GHC.Types.Int]))
+                             (case Burn.$wavg
+                                     (GHC.Types.:
+                                        @ GHC.Types.Int
+                                        ipv
+                                        (GHC.List.$wunsafeTake
+                                           @ GHC.Types.Int
+                                           3#
+                                           ww)) of ww2 { DEFAULT ->
+                              GHC.Types.I# ww2 },
+                              (GHC.List.tail @ GHC.Types.Int ww, wild1)) } }) -}
+21159b928f0e221e3d3e9a678e8c321a
+  $wj :: [GHC.Types.Int] -> (# [GHC.Types.Int], [[GHC.Types.Int]] #)
+  {- Arity: 1, Strictness: <L,U>, Inline: [0],
+     Unfolding: (\ (w :: [GHC.Types.Int]) ->
+                 (# let {
+                      w1 :: [GHC.Types.Int]
+                      = case Burn.$wf w of ww { (#,#) ww1 ww2 -> ww1 }
+                    } in
+                    let {
+                      w2 :: [GHC.Types.Int]
+                      = case Burn.$wf w of ww { (#,#) ww1 ww2 ->
+                        case ww2 of wild {
+                          [] -> GHC.List.badHead @ [GHC.Types.Int] : x ds1 -> x } }
+                    } in
+                    GHC.Types.:
+                      @ GHC.Types.Int
+                      (case Burn.$wavg
+                              (GHC.Types.:
+                                 @ GHC.Types.Int
+                                 (GHC.List.head @ GHC.Types.Int w2)
+                                 (GHC.List.$wunsafeTake @ GHC.Types.Int 2# w1)) of ww { DEFAULT ->
+                       GHC.Types.I# ww })
+                      (Burn.$wgo1 w1 w2),
+                    Burn.f w #)) -}
+2d2913a2bc6d13d8f4b53e64f1fa9b2d
+  $wk :: [[GHC.Types.Int]] -> (# GHC.Types.Int, [GHC.Types.Int] #)
+  {- Arity: 1, Strictness: <L,U>, Inline: [0],
+     Unfolding: (\ (w :: [[GHC.Types.Int]]) ->
+                 let {
+                   w1 :: [GHC.Types.Int]
+                   = case Burn.$wf
+                            (GHC.List.head @ [GHC.Types.Int] w) of ww { (#,#) ww1 ww2 ->
+                     ww1 }
+                 } in
+                 let {
+                   w2 :: [GHC.Types.Int]
+                   = case Burn.$wf
+                            (GHC.List.head @ [GHC.Types.Int] w) of ww { (#,#) ww1 ww2 ->
+                     case ww2 of wild {
+                       [] -> GHC.List.badHead @ [GHC.Types.Int] : x ds1 -> x } }
+                 } in
+                 (# case Burn.$wavg
+                           (GHC.Types.:
+                              @ GHC.Types.Int
+                              (GHC.List.head @ GHC.Types.Int w2)
+                              (GHC.List.$wunsafeTake @ GHC.Types.Int 2# w1)) of ww { DEFAULT ->
+                    GHC.Types.I# ww },
+                    Burn.$wgo1 w1 w2 #)) -}
+39fff4f426ba34c693a81576dd0302b4
+  $wl :: GHC.Prim.Int# -> [[GHC.Types.Int]] -> [[GHC.Types.Int]]
+  {- Arity: 2, Strictness: <S,1*U><L,U>, Inline: [0] -}
+a5be705da8b63a8bfd3ef91217248e1a
+  type Blue = Burn.Color
+b7732780bb6823fbbc71f1237ea8cdba
+  type Color = GHC.Types.Int
+d053fe6af6a52ba23346bafdb5d0e304
+  type Green = Burn.Color
+bfd9156b1693e6ac2597a404fdaec46c
+  type Img = [[Burn.Pixel]]
+9997238d8f1afe31dcfcffb29d28876b
+  type Pixel = (Burn.Red, Burn.Green, Burn.Blue)
+a2dcc8672c7a4f045153ce8f51c73267
+  type Red = Burn.Color
+bb71274fc3186843bdfeb8777da56434
+  avg :: [GHC.Types.Int] -> GHC.Types.Int
+  {- Arity: 1, Strictness: <S,U>m, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: [GHC.Types.Int]) ->
+                 case Burn.$wavg w of ww { DEFAULT -> GHC.Types.I# ww }) -}
+26a1afd77bbcac0d24e2058f769156ec
+  f :: [GHC.Types.Int] -> [[GHC.Types.Int]]
+  {- Arity: 1, Strictness: <L,U>m2, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: [GHC.Types.Int]) ->
+                 case Burn.$wf w of ww { (#,#) ww1 ww2 ->
+                 GHC.Types.: @ [GHC.Types.Int] ww1 ww2 }) -}
+7caa1fc08a9327f45f2687ff80ff5c8f
+  f_go :: [GHC.Types.Int] -> [GHC.Types.Int]
+  {- Arity: 1, Strictness: <S,1*U> -}
+77ce3083f0a89f39a6c441bc157437a6
+  g ::
+    [GHC.Types.Int] -> GHC.Base.Maybe (GHC.Types.Int, [GHC.Types.Int])
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (ds :: [GHC.Types.Int]) ->
+                 case ds of wild {
+                   [] -> GHC.Base.Nothing @ (GHC.Types.Int, [GHC.Types.Int])
+                   : ipv ipv1
+                   -> GHC.Base.Just
+                        @ (GHC.Types.Int, [GHC.Types.Int])
+                        (case Burn.$wavg
+                                (GHC.List.$wunsafeTake @ GHC.Types.Int 3# wild) of ww { DEFAULT ->
+                         GHC.Types.I# ww },
+                         ipv1) }) -}
+9ef625c55944193f561c5a7782de8184
+  h :: ([GHC.Types.Int], [GHC.Types.Int]) -> [GHC.Types.Int]
+  {- Arity: 1, Strictness: <L,U(U,U)>m2, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: ([GHC.Types.Int], [GHC.Types.Int])) ->
+                 case Burn.$wh w of ww { (#,#) ww1 ww2 ->
+                 GHC.Types.: @ GHC.Types.Int ww1 ww2 }) -}
+e6fff374963a42e9476e9e7410006b60
+  i ::
+    ([GHC.Types.Int], [GHC.Types.Int])
+    -> GHC.Base.Maybe
+         (GHC.Types.Int, ([GHC.Types.Int], [GHC.Types.Int]))
+  {- Arity: 1, Strictness: <S(LS),1*U(U,1*U)>, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: ([GHC.Types.Int], [GHC.Types.Int])) ->
+                 case w of ww { (,) ww1 ww2 -> Burn.$wi ww1 ww2 }) -}
+ae8b805ab8858b84cd4f8fd17d10b808
+  i1 ::
+    GHC.Base.Maybe (GHC.Types.Int, ([GHC.Types.Int], [GHC.Types.Int]))
+  {- Strictness: x -}
+32d8a3d2e141aff1145d270165a203ef
+  initImg :: GHC.Types.Int -> [GHC.Types.Int] -> [[GHC.Types.Int]]
+  {- Arity: 2, Strictness: <S(S),1*U(1*U)><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (c :: GHC.Types.Int) (xs :: [GHC.Types.Int]) ->
+                 Burn.l c (Burn.j xs)) -}
+8cb2473c8a03f36c97c16064681423f0
+  j :: [GHC.Types.Int] -> [[GHC.Types.Int]]
+  {- Arity: 1, Strictness: <L,U>m2, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: [GHC.Types.Int]) ->
+                 case Burn.$wj w of ww { (#,#) ww1 ww2 ->
+                 GHC.Types.: @ [GHC.Types.Int] ww1 ww2 }) -}
+d7905afdf9479c08f2b50f7a1620efb0
+  k :: [[GHC.Types.Int]] -> [GHC.Types.Int]
+  {- Arity: 1, Strictness: <L,U>m2, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: [[GHC.Types.Int]]) ->
+                 case Burn.$wk w of ww { (#,#) ww1 ww2 ->
+                 GHC.Types.: @ GHC.Types.Int ww1 ww2 }) -}
+b7f75c2953a432735a24185c346701ae
+  l :: GHC.Types.Int -> [[GHC.Types.Int]] -> [[GHC.Types.Int]]
+  {- Arity: 2, Strictness: <S(S),1*U(1*U)><L,U>, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: GHC.Types.Int) (w1 :: [[GHC.Types.Int]]) ->
+                 case w of ww { GHC.Types.I# ww1 -> Burn.$wl ww1 w1 }) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+
