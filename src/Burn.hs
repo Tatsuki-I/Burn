@@ -39,7 +39,9 @@ g [] =  Nothing
 g xs =  Just (avg (take 3 xs), tail xs)
 
 h :: ([Int], [Int]) -> [Int]
-h t =  avg ((head . snd) t : take 2 (fst t)) : unfoldr i t
+h t =  avg ((head . snd) t : (last . fst) t : take 2 (fst t))
+       : init (unfoldr i t)
+       ++ [avg ((last . snd) t : (head . fst) t : take 2 (reverse $ fst t))]
 
 i :: ([Int], [Int]) -> Maybe (Int, ([Int], [Int]))
 i (_, [_]) =  Nothing
@@ -58,5 +60,6 @@ l 0 xs =  xs
 l c xs =  l (c - 1) (k xs : xs)
 
 avg :: [Int] -> Int
-avg xs =  sum xs `div` length xs
+avg xs =  round $ (fromIntegral (sum xs) :: Double) / (fromIntegral (length xs) :: Double)
+--avg xs =  $ sum xs `div` length xs
 
